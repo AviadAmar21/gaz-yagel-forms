@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#3a83bd">
+<link rel="apple-touch-icon" href="favicon.png">
+<title>טפסים – גז יגל</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Assistant:wght@400;600;700&display=swap">
+<style>
+/* Layout: brand-matched single column. Grey gradient ground, logo, blue/green headline, dark pill buttons with colored arc. Light-only, as in the brand site. */
+:root{
+  --blue:#3a83bd;
+  --green:#b0c852;
+  --pill:#232323;
+  --ink:#1c1c1c;
+  --muted:#5b5f63;
+  --card:#ffffff;
+  --ground-1:#ffffff;
+  --ground-2:#d6d6d6;
+  --font-display:"Secular One","Assistant",system-ui,sans-serif;
+  --font-body:"Assistant",system-ui,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html,body{min-height:100%}
+body{margin:0;background:var(--ground-2);color:var(--ink);font-family:var(--font-body);font-size:18px;line-height:1.45;direction:rtl}
+.page{position:relative;overflow:hidden;min-height:100vh;
+  background:radial-gradient(120% 70% at 50% 18%,var(--ground-1) 0%,#f1f1f1 45%,var(--ground-2) 100%)}
+
+/* decorative brand petals */
+.petal{position:absolute;pointer-events:none;z-index:0}
+.petal.tl{top:40px;left:-120px;width:190px;transform:rotate(-8deg);opacity:.95}
+.petal.br{bottom:-40px;right:-60px;width:240px}
+
+.wrap{position:relative;z-index:1;max-width:560px;margin:0 auto;padding-inline:20px;padding-block:28px 40px}
+
+header{display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px}
+.logo{width:min(230px,62vw);height:auto}
+h1{font-family:var(--font-display);font-weight:400;color:var(--blue);margin:8px 0 0;font-size:clamp(30px,8.4vw,42px);line-height:1.05;text-wrap:balance}
+h1 em{font-style:normal;color:var(--green)}
+.hello{margin:0;font-size:18px;color:var(--ink);max-width:30ch}
+
+/* search */
+.search{position:relative;margin-top:26px}
+.search label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.search input{width:100%;font:inherit;font-size:18px;padding:15px 54px 15px 20px;border:0;border-radius:999px;
+  background:var(--card);color:var(--ink);box-shadow:0 6px 22px rgba(0,0,0,.12)}
+.search input::placeholder{color:#8a8f94}
+.search input:focus{outline:3px solid var(--blue);outline-offset:2px}
+.search svg{position:absolute;right:20px;top:50%;transform:translateY(-50%);width:22px;height:22px;color:var(--blue);pointer-events:none}
+
+.last{margin-top:14px;display:flex;justify-content:center;align-items:center;gap:8px;flex-wrap:wrap;font-size:16px;color:var(--muted)}
+.last a{color:var(--blue);font-weight:700;text-decoration:none;border-bottom:2px solid var(--green)}
+
+/* groups */
+.group{margin-top:34px;display:flex;flex-direction:column;gap:18px}
+.group h2{font-family:var(--font-display);font-weight:400;color:var(--blue);font-size:26px;margin:0;text-align:center}
+
+/* dark pill with colored arc, as on the brand site */
+.pill{--accent:var(--green);position:relative;display:flex;align-items:center;gap:14px;min-height:78px;
+  margin-inline-start:6px;padding:12px 26px 12px 22px;border-radius:999px;background:var(--pill);color:#fff;text-decoration:none;
+  box-shadow:0 6px 16px rgba(0,0,0,.18);transition:transform .12s ease}
+.pill.blue{--accent:var(--blue)}
+.pill::before{content:"";position:absolute;top:-6px;bottom:-6px;right:-6px;width:58px;border:6px solid var(--accent);
+  border-left:0;border-radius:0 999px 999px 0}
+.pill:active{transform:scale(.98)}
+.pill:focus-visible{outline:3px solid var(--accent);outline-offset:8px}
+.pill .txt{flex:1;min-width:0}
+.pill b{display:block;font-family:var(--font-display);font-weight:400;font-size:21px;line-height:1.2}
+.pill small{display:block;font-size:15px;color:#c9c9c9;margin-top:1px}
+.pill .num{flex:none;font-weight:700;font-size:14px;color:var(--accent);border:1.5px solid var(--accent);border-radius:999px;padding:2px 10px;font-variant-numeric:tabular-nums}
+.pill .ico{flex:none;width:40px;height:40px;color:var(--accent)}
+.pill .ico svg{width:100%;height:100%}
+@media (max-width:380px){.pill small{display:none}}
+
+.empty{margin-top:30px;text-align:center;color:var(--muted)}
+
+footer{margin-top:40px;background:var(--card);border-radius:22px;box-shadow:0 6px 22px rgba(0,0,0,.10);
+  padding:18px 20px;display:flex;flex-wrap:wrap;justify-content:center;gap:6px 22px;text-align:center;font-size:16px;color:var(--muted)}
+footer strong{font-family:var(--font-display);font-weight:400;color:var(--blue);font-size:20px;font-variant-numeric:tabular-nums;user-select:all}
+@media (prefers-reduced-motion:reduce){.pill{transition:none}}
+</style>
+</head>
+<body>
+
+
+<div class="page">
+  <svg class="petal tl" viewBox="0 0 200 200" aria-hidden="true">
+    <path d="M10 20C80 40 150 90 190 190 120 160 50 110 10 20Z" fill="#b0c852" opacity=".9"/>
+    <path d="M0 90C60 100 120 140 150 200 90 190 30 150 0 90Z" fill="#3a83bd" opacity=".9"/>
+  </svg>
+  <svg class="petal br" viewBox="0 0 240 240" aria-hidden="true">
+    <path d="M60 0C70 90 130 170 240 220L240 240 140 240C80 180 50 100 60 0Z" fill="#3a83bd"/>
+    <path d="M0 240C60 200 150 190 240 205L240 240Z" fill="#b0c852"/>
+  </svg>
+
+  <main class="wrap">
+    <header>
+      <img class="logo" src="https://landing.wavegroup.co.il/gaz-yagel/wp-content/uploads/sites/21/2023/03/logoGaz.svg" onerror="this.onerror=null;this.src='logo.png'" alt="גז יגל – נותנים גז בשירות" width="304" height="211">
+      <h1>הטפסים של גז יגל<br><em>בקליק</em> אחד</h1>
+      <p class="hello">למה טכנאי גז אף פעם לא נלחץ? כי תמיד יש לו ווסת בתיק.</p>
+    </header>
+
+    <div class="search">
+      <label for="q">חיפוש טופס</label>
+      <input id="q" type="search" placeholder="חיפוש: שירות, ציוד, מונה, 121…" autocomplete="off">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    </div>
+    <div class="last" id="last" hidden>אחרון שפתחת: <a id="lastLink" href="#" target="_blank" rel="noopener"></a></div>
+
+    <div id="list"></div>
+    <p class="empty" id="empty" hidden>לא נמצא טופס. נסו מילה אחרת.</p>
+
+    <footer>
+      <span>מוקד ארצי <strong dir="ltr">08-9376000</strong></span>
+      <span>חיוג מקוצר <strong dir="ltr">*2376</strong></span>
+    </footer>
+  </main>
+</div>
+
+<script>
+const I={
+  wrench:'<path d="M26 8a8 8 0 0 0-10.4 10.4L6 28l6 6 9.6-9.6A8 8 0 0 0 32 14l-5 5-4.6-1.4L21 13z"/>',
+  gauge:'<path d="M6 30a15 15 0 1 1 28 0"/><path d="m20 22 7-7"/><circle cx="20" cy="22" r="2"/><path d="M11 30h18"/>',
+  pin:'<rect x="8" y="6" width="24" height="28" rx="3"/><path d="M14 14h12M14 20h12M14 26h7"/><path d="M20 2v6"/>',
+  box:'<path d="M35 13 20 5 5 13v14l15 8 15-8z"/><path d="m5 13 15 8 15-8M20 21v14"/>',
+  doc:'<path d="M23 4H10a2 2 0 0 0-2 2v28a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2V13z"/><path d="M23 4v9h9M14 24l4 4 8-8"/>'
+};
+const SOGO='https://forms.sogomatic.com/gazigal/pdf/';
+const MAIL='/?agentEmail=jer2@gazyagel.co.il';
+const groups=[
+ {name:'עבודה בשטח',c:'',items:[
+  {t:'קריאת שירות לטכנאי',d:'דיווח על קריאת שירות',i:'wrench',u:'https://tally.so/r/J9ZBp7',k:'שירות תקלה לקוח'},
+  {t:'קריאת מונים',d:'רישום קריאת מונה גז',i:'gauge',u:'https://tally.so/r/1Ao27g',k:'מונה מונים צריכה'},
+  {t:'הדבקת מודעה',d:'תיעוד הדבקת מודעה',i:'pin',u:'https://tally.so/r/b5JrbZ',k:'מודעה שלט הודעה'}]},
+ {name:'מחסן',c:'blue',items:[
+  {t:'הזמנת ציוד מהמחסן',d:'בקשת ציוד וחלקים',i:'box',u:'https://tally.so/r/1AgBRW',k:'ציוד מחסן חלקים הזמנה'}]},
+ {name:'תקניות ובדיקות',c:'',items:[
+  {t:'תקנית – מאגר משותף',d:'תקנית ללקוח במאגר משותף',n:'121',i:'doc',u:SOGO+'121'+MAIL,k:'תקנית משותף 121'},
+  {t:'תקנית – מאגר נפרד',d:'תקנית ללקוח במאגר נפרד',n:'120',i:'doc',u:SOGO+'120'+MAIL,k:'תקנית נפרד 120'},
+  {t:'נורמטיבי',d:'טופס בדיקה נורמטיבית',n:'125',i:'doc',u:SOGO+'125'+MAIL,k:'נורמטיבי 125'}]}
+];
+const list=document.getElementById('list');
+list.innerHTML=groups.map(g=>`<section class="group"><h2>${g.name}</h2>${g.items.map(x=>
+ `<a class="pill ${g.c}" href="${x.u}" target="_blank" rel="noopener" data-k="${x.t} ${x.d} ${x.k}">
+   <span class="txt"><b>${x.t}</b><small>${x.d}</small></span>${x.n?`<span class="num">${x.n}</span>`:''}
+   <span class="ico"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">${I[x.i]}</svg></span></a>`).join('')}</section>`).join('');
+
+const q=document.getElementById('q'),empty=document.getElementById('empty');
+q.addEventListener('input',()=>{
+  const v=q.value.trim();let any=false;
+  list.querySelectorAll('.group').forEach(s=>{let shown=0;
+    s.querySelectorAll('.pill').forEach(c=>{const ok=!v||c.dataset.k.includes(v);c.hidden=!ok;if(ok)shown++});
+    s.hidden=!shown;if(shown)any=true});
+  empty.hidden=any;
+});
+const last=document.getElementById('last'),lastLink=document.getElementById('lastLink');
+function showLast(){try{const s=JSON.parse(localStorage.getItem('gy-last')||'null');
+  if(s){lastLink.textContent=s.t;lastLink.href=s.u;last.hidden=false}}catch(e){}}
+list.addEventListener('click',e=>{const c=e.target.closest('.pill');if(!c)return;
+  try{localStorage.setItem('gy-last',JSON.stringify({t:c.querySelector('b').textContent,u:c.href}))}catch(e){}
+  setTimeout(showLast,50)});
+showLast();
+</script>
+
+</body>
+</html>
