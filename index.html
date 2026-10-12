@@ -5,14 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex,nofollow">
 <meta name="theme-color" content="#3a83bd">
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=2">
 <title>טפסים – גז יגל</title>
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=2">
 <link rel="icon" type="image/png" href="favicon.png?v=2">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Assistant:wght@400;600;700&display=swap">
 <style>
-/* Layout: brand-matched single column. Grey gradient ground, logo, blue/green headline, dark pill buttons with colored arc. Light-only, as in the brand site. */
+/* Layout: brand-matched single column. Step 1 pick a region, step 2 that region's forms. Dark pills with colored arc, as on the brand site. Light-only. */
 :root{
   --blue:#3a83bd;
   --green:#b0c852;
@@ -33,7 +33,6 @@ body{margin:0;background:var(--ground-2);color:var(--ink);font-family:var(--font
 .page{position:relative;overflow:hidden;min-height:100vh;
   background:radial-gradient(120% 70% at 50% 18%,var(--ground-1) 0%,#f1f1f1 45%,var(--ground-2) 100%)}
 
-/* decorative brand petals */
 .petal{position:absolute;pointer-events:none;z-index:0}
 .petal.tl{top:40px;left:-120px;width:190px;transform:rotate(-8deg);opacity:.95}
 .petal.br{bottom:-40px;right:-60px;width:240px}
@@ -46,26 +45,10 @@ h1{font-family:var(--font-display);font-weight:400;color:var(--blue);margin:8px 
 h1 em{font-style:normal;color:var(--green)}
 .hello{margin:0;font-size:18px;color:var(--ink);max-width:30ch}
 
-/* search */
-.search{position:relative;margin-top:26px}
-.search label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
-.search input{width:100%;font:inherit;font-size:18px;padding:15px 54px 15px 20px;border:0;border-radius:999px;
-  background:var(--card);color:var(--ink);box-shadow:0 6px 22px rgba(0,0,0,.12)}
-.search input::placeholder{color:#8a8f94}
-.search input:focus{outline:3px solid var(--blue);outline-offset:2px}
-.search svg{position:absolute;right:20px;top:50%;transform:translateY(-50%);width:22px;height:22px;color:var(--blue);pointer-events:none}
-
-.last{margin-top:14px;display:flex;justify-content:center;align-items:center;gap:8px;flex-wrap:wrap;font-size:16px;color:var(--muted)}
-.last a{color:var(--blue);font-weight:700;text-decoration:none;border-bottom:2px solid var(--green)}
-
-/* groups */
-.group{margin-top:34px;display:flex;flex-direction:column;gap:18px}
-.group h2{font-family:var(--font-display);font-weight:400;color:var(--blue);font-size:26px;margin:0;text-align:center}
-
-/* dark pill with colored arc, as on the brand site */
-.pill{--accent:var(--green);position:relative;display:flex;align-items:center;gap:14px;min-height:78px;
-  margin-inline-start:6px;padding:12px 26px 12px 22px;border-radius:999px;background:var(--pill);color:#fff;text-decoration:none;
-  box-shadow:0 6px 16px rgba(0,0,0,.18);transition:transform .12s ease}
+/* dark pill with colored arc */
+.pill{--accent:var(--green);position:relative;display:flex;align-items:center;gap:14px;min-height:78px;width:calc(100% - 6px);
+  margin-inline-start:6px;padding:12px 26px 12px 22px;border:0;border-radius:999px;background:var(--pill);color:#fff;text-decoration:none;
+  font:inherit;text-align:right;cursor:pointer;box-shadow:0 6px 16px rgba(0,0,0,.18);transition:transform .12s ease}
 .pill.blue{--accent:var(--blue)}
 .pill::before{content:"";position:absolute;top:-6px;bottom:-6px;right:-6px;width:58px;border:6px solid var(--accent);
   border-left:0;border-radius:0 999px 999px 0}
@@ -79,6 +62,33 @@ h1 em{font-style:normal;color:var(--green)}
 .pill .ico svg{width:100%;height:100%}
 @media (max-width:380px){.pill small{display:none}}
 
+/* step 1: regions */
+.step-title{font-family:var(--font-display);font-weight:400;color:var(--blue);font-size:28px;margin:34px 0 4px;text-align:center}
+.step-sub{margin:0 0 22px;text-align:center;color:var(--muted)}
+.regions{display:flex;flex-direction:column;gap:20px}
+.pill.region{min-height:88px}
+.pill.region b{font-size:24px}
+
+/* step 2: chosen region bar */
+.regionbar{margin-top:28px;display:flex;align-items:center;justify-content:space-between;gap:12px;
+  background:var(--card);border-radius:999px;padding:8px 8px 8px 8px;padding-inline-start:20px;box-shadow:0 6px 22px rgba(0,0,0,.12)}
+.regionbar .lbl{font-size:15px;color:var(--muted);line-height:1.1}
+.regionbar .lbl strong{display:block;font-family:var(--font-display);font-weight:400;font-size:22px;color:var(--blue)}
+.change{flex:none;font:inherit;font-weight:700;font-size:16px;border:2px solid var(--green);background:transparent;color:var(--ink);
+  border-radius:999px;padding:8px 16px;cursor:pointer;display:flex;align-items:center;gap:6px}
+.change:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.change svg{width:18px;height:18px}
+
+.search{position:relative;margin-top:16px}
+.search label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.search input{width:100%;font:inherit;font-size:18px;padding:14px 54px 14px 20px;border:0;border-radius:999px;
+  background:var(--card);color:var(--ink);box-shadow:0 6px 22px rgba(0,0,0,.10)}
+.search input::placeholder{color:#8a8f94}
+.search input:focus{outline:3px solid var(--blue);outline-offset:2px}
+.search svg{position:absolute;right:20px;top:50%;transform:translateY(-50%);width:22px;height:22px;color:var(--blue);pointer-events:none}
+
+.group{margin-top:34px;display:flex;flex-direction:column;gap:18px}
+.group h2{font-family:var(--font-display);font-weight:400;color:var(--blue);font-size:26px;margin:0;text-align:center}
 .empty{margin-top:30px;text-align:center;color:var(--muted)}
 
 footer{margin-top:40px;background:var(--card);border-radius:22px;box-shadow:0 6px 22px rgba(0,0,0,.10);
@@ -88,8 +98,6 @@ footer strong{font-family:var(--font-display);font-weight:400;color:var(--blue);
 </style>
 </head>
 <body>
-
-
 <div class="page">
   <svg class="petal tl" viewBox="0 0 200 200" aria-hidden="true">
     <path d="M10 20C80 40 150 90 190 190 120 160 50 110 10 20Z" fill="#b0c852" opacity=".9"/>
@@ -107,15 +115,28 @@ footer strong{font-family:var(--font-display);font-weight:400;color:var(--blue);
       <p class="hello">למה טכנאי גז אף פעם לא נלחץ? כי תמיד יש לו ווסת בתיק.</p>
     </header>
 
-    <div class="search">
-      <label for="q">חיפוש טופס</label>
-      <input id="q" type="search" placeholder="חיפוש: שירות, ציוד, מונה, 121…" autocomplete="off">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-    </div>
-    <div class="last" id="last" hidden>אחרון שפתחת: <a id="lastLink" href="#" target="_blank" rel="noopener"></a></div>
+    <section id="pick">
+      <h2 class="step-title">באיזה אזור אתם עובדים?</h2>
+      <p class="step-sub">בחרו אזור כדי לראות את הטפסים שלו</p>
+      <div class="regions" id="regions"></div>
+    </section>
 
-    <div id="list"></div>
-    <p class="empty" id="empty" hidden>לא נמצא טופס. נסו מילה אחרת.</p>
+    <section id="forms" hidden>
+      <div class="regionbar">
+        <span class="lbl">אזור<strong id="regionName"></strong></span>
+        <button class="change" id="change" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h13l-3-3M20 17H7l3 3"/></svg>
+          החלפת אזור
+        </button>
+      </div>
+      <div class="search">
+        <label for="q">חיפוש טופס</label>
+        <input id="q" type="search" placeholder="חיפוש: שירות, ציוד, מונה, 121…" autocomplete="off">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      </div>
+      <div id="list"></div>
+      <p class="empty" id="empty" hidden>לא נמצא טופס. נסו מילה אחרת.</p>
+    </section>
 
     <footer>
       <span>מוקד ארצי <strong dir="ltr">08-9376000</strong></span>
@@ -130,43 +151,80 @@ const I={
   gauge:'<path d="M6 30a15 15 0 1 1 28 0"/><path d="m20 22 7-7"/><circle cx="20" cy="22" r="2"/><path d="M11 30h18"/>',
   pin:'<rect x="8" y="6" width="24" height="28" rx="3"/><path d="M14 14h12M14 20h12M14 26h7"/><path d="M20 2v6"/>',
   box:'<path d="M35 13 20 5 5 13v14l15 8 15-8z"/><path d="m5 13 15 8 15-8M20 21v14"/>',
-  doc:'<path d="M23 4H10a2 2 0 0 0-2 2v28a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2V13z"/><path d="M23 4v9h9M14 24l4 4 8-8"/>'
+  doc:'<path d="M23 4H10a2 2 0 0 0-2 2v28a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2V13z"/><path d="M23 4v9h9M14 24l4 4 8-8"/>',
+  map:'<path d="M20 36s11-10.5 11-19a11 11 0 0 0-22 0c0 8.5 11 19 11 19z"/><circle cx="20" cy="17" r="4"/>',
+  arrow:'<path d="m24 10-10 10 10 10"/>'
 };
 const SOGO='https://forms.sogomatic.com/gazigal/pdf/';
-const MAIL='/?agentEmail=jer2@gazyagel.co.il';
-const groups=[
- {name:'עבודה בשטח',c:'',items:[
-  {t:'קריאת שירות לטכנאי',d:'דיווח על קריאת שירות',i:'wrench',u:'https://tally.so/r/J9ZBp7',k:'שירות תקלה לקוח'},
-  {t:'קריאת מונים',d:'רישום קריאת מונה גז',i:'gauge',u:'https://tally.so/r/1Ao27g',k:'מונה מונים צריכה'},
-  {t:'הדבקת מודעה',d:'תיעוד הדבקת מודעה',i:'pin',u:'https://tally.so/r/b5JrbZ',k:'מודעה שלט הודעה'}]},
- {name:'מחסן',c:'blue',items:[
-  {t:'הזמנת ציוד מהמחסן',d:'בקשת ציוד וחלקים',i:'box',u:'https://tally.so/r/1AgBRW',k:'ציוד מחסן חלקים הזמנה'}]},
- {name:'תקניות ובדיקות',c:'',items:[
-  {t:'תקנית – מאגר משותף',d:'תקנית ללקוח במאגר משותף',n:'121',i:'doc',u:SOGO+'121'+MAIL,k:'תקנית משותף 121'},
-  {t:'תקנית – מאגר נפרד',d:'תקנית ללקוח במאגר נפרד',n:'120',i:'doc',u:SOGO+'120'+MAIL,k:'תקנית נפרד 120'},
-  {t:'נורמטיבי',d:'טופס בדיקה נורמטיבית',n:'125',i:'doc',u:SOGO+'125'+MAIL,k:'נורמטיבי 125'}]}
-];
-const list=document.getElementById('list');
-list.innerHTML=groups.map(g=>`<section class="group"><h2>${g.name}</h2>${g.items.map(x=>
- `<a class="pill ${g.c}" href="${x.u}" target="_blank" rel="noopener" data-k="${x.t} ${x.d} ${x.k}">
-   <span class="txt"><b>${x.t}</b><small>${x.d}</small></span>${x.n?`<span class="num">${x.n}</span>`:''}
-   <span class="ico"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">${I[x.i]}</svg></span></a>`).join('')}</section>`).join('');
 
-const q=document.getElementById('q'),empty=document.getElementById('empty');
-q.addEventListener('input',()=>{
-  const v=q.value.trim();let any=false;
-  list.querySelectorAll('.group').forEach(s=>{let shown=0;
-    s.querySelectorAll('.pill').forEach(c=>{const ok=!v||c.dataset.k.includes(v);c.hidden=!ok;if(ok)shown++});
-    s.hidden=!shown;if(shown)any=true});
-  empty.hidden=any;
+/* Forms per region. To update a link, change it here. */
+const REGIONS={
+  south:{name:'דרום-מרכז',sub:'אזור דרום ומרכז',c:'',email:'isodot@gazyagel.co.il',
+    tally:{service:'https://tally.so/r/xXkl5y',meters:'https://tally.so/r/lboMGW',notice:'https://tally.so/r/D4rMeR',stock:'https://tally.so/r/zxpLZR'}},
+  jerusalem:{name:'ירושלים והסביבה',sub:'ירושלים והסביבה',c:'blue',email:'jer2@gazyagel.co.il',
+    tally:{service:'https://tally.so/r/J9ZBp7',meters:'https://tally.so/r/1Ao27g',notice:'https://tally.so/r/b5JrbZ',stock:'https://tally.so/r/1AgBRW'}},
+  north:{name:'צפון',sub:'אזור צפון',c:'',email:'ako@gazyagel.co.il',
+    tally:{service:'https://tally.so/r/QKgO41',meters:'https://tally.so/r/GxNQgL',notice:'https://tally.so/r/Y5ExyW',stock:'https://tally.so/r/WOGjBv'}}
+};
+function groupsFor(r){
+  const m='/?agentEmail='+r.email, t=r.tally;
+  return [
+   {name:'עבודה בשטח',c:'',items:[
+    {t:'קריאת שירות',d:'דיווח על קריאת שירות',i:'wrench',u:t.service,k:'שירות תקלה לקוח'},
+    {t:'קריאת מונים',d:'רישום קריאת מונה גז',i:'gauge',u:t.meters,k:'מונה מונים צריכה'},
+    {t:'הדבקת מודעה',d:'תיעוד הדבקת מודעה',i:'pin',u:t.notice,k:'מודעה שלט הודעה'}]},
+   {name:'מחסן',c:'blue',items:[
+    {t:'הזמנת ציוד',d:'בקשת ציוד וחלקים מהמחסן',i:'box',u:t.stock,k:'ציוד מחסן חלקים הזמנה הזמנות'}]},
+   {name:'תקניות ובדיקות',c:'',items:[
+    {t:'תקנית – מאגר משותף',d:'תקנית ללקוח במאגר משותף',n:'121',i:'doc',u:SOGO+'121'+m,k:'תקנית משותף 121'},
+    {t:'תקנית – מאגר נפרד',d:'תקנית ללקוח במאגר נפרד',n:'120',i:'doc',u:SOGO+'120'+m,k:'תקנית נפרד 120'},
+    {t:'בדיקה נורמטיבית',d:'טופס בדיקה נורמטיבית',n:'125',i:'doc',u:SOGO+'125'+m,k:'נורמטיבי נורמטיבית 125'}]}
+  ];
+}
+const svg=(n,sw)=>`<svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="${sw||2.2}" stroke-linecap="round" stroke-linejoin="round">${I[n]}</svg>`;
+
+const $=id=>document.getElementById(id);
+$('regions').innerHTML=Object.entries(REGIONS).map(([id,r])=>
+  `<button class="pill region ${r.c}" type="button" data-r="${id}">
+     <span class="txt"><b>${r.name}</b></span><span class="ico">${svg('arrow',2.6)}</span></button>`).join('');
+
+function store(k,v){try{v==null?localStorage.removeItem(k):localStorage.setItem(k,v)}catch(e){}}
+function load(k){try{return localStorage.getItem(k)}catch(e){return null}}
+
+function show(id){
+  const r=REGIONS[id];
+  if(!r){ $('pick').hidden=false; $('forms').hidden=true; return; }
+  $('regionName').textContent=r.name;
+  $('list').innerHTML=groupsFor(r).map(g=>`<section class="group"><h2>${g.name}</h2>${g.items.map(x=>
+    `<a class="pill ${g.c}" href="${x.u}" target="_blank" rel="noopener" data-k="${x.t} ${x.d} ${x.k}">
+       <span class="txt"><b>${x.t}</b><small>${x.d}</small></span>${x.n?`<span class="num">${x.n}</span>`:''}
+       <span class="ico">${svg(x.i)}</span></a>`).join('')}</section>`).join('');
+  $('q').value=''; $('empty').hidden=true;
+  $('pick').hidden=true; $('forms').hidden=false;
+}
+function choose(id){
+  store('gy-region',id);
+  if(location.hash!=='#'+id) history.replaceState(null,'','#'+id);
+  show(id); window.scrollTo({top:0});
+}
+$('regions').addEventListener('click',e=>{const b=e.target.closest('[data-r]'); if(b) choose(b.dataset.r);});
+$('change').addEventListener('click',()=>{
+  store('gy-region',null); history.replaceState(null,'',location.pathname+location.search); show(null);
+  $('pick').scrollIntoView({block:'start'});
 });
-const last=document.getElementById('last'),lastLink=document.getElementById('lastLink');
-function showLast(){try{const s=JSON.parse(localStorage.getItem('gy-last')||'null');
-  if(s){lastLink.textContent=s.t;lastLink.href=s.u;last.hidden=false}}catch(e){}}
-list.addEventListener('click',e=>{const c=e.target.closest('.pill');if(!c)return;
-  try{localStorage.setItem('gy-last',JSON.stringify({t:c.querySelector('b').textContent,u:c.href}))}catch(e){}
-  setTimeout(showLast,50)});
-showLast();
+$('q').addEventListener('input',()=>{
+  const v=$('q').value.trim(); let any=false;
+  $('list').querySelectorAll('.group').forEach(s=>{let shown=0;
+    s.querySelectorAll('.pill').forEach(c=>{const ok=!v||c.dataset.k.includes(v); c.hidden=!ok; if(ok)shown++});
+    s.hidden=!shown; if(shown)any=true});
+  $('empty').hidden=any;
+});
+
+/* A link with #north / #south / #jerusalem opens that region directly; otherwise the last region used on this phone. */
+const fromHash=location.hash.slice(1);
+const start=REGIONS[fromHash]?fromHash:load('gy-region');
+if(REGIONS[fromHash]) store('gy-region',fromHash);
+show(REGIONS[start]?start:null);
 </script>
 
 </body>
